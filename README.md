@@ -1,4 +1,4 @@
-# rusantara
+# Rusantara
 C22-PS166 - Bangkit Capstone (Rusantara)
 
 Hello everyone!
