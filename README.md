@@ -6,6 +6,7 @@ This is our repository for our bangkit capstone project.
 
 Our project combine the technology that we studied on bangkit to preserve and clasify indonesian traditional food using android app
 
+## Team Member 
 we are team of 6 with composition of 1 cc, 3 ml, and 2 md
 | Name	| Bangkit-ID	| Path |
 | ---  | ---  | --- |
@@ -15,3 +16,9 @@ we are team of 6 with composition of 1 cc, 3 ml, and 2 md
 | Raden Wisnu Andhika Pranidhia | A2010F1090 | Android |
 | Fauzan Dwiputro Ryoko Laksono | A2010F1092 | Android |
 | Muhammad Fazlie | C7308f2655 | Cloud Computing |
+
+
+## Branch
+[machine learning](https://github.com/mochammadfarkhan/rusantara/tree/machine-learning)
+[android](https://github.com/mochammadfarkhan/rusantara/tree/android)
+[cloud computing](httpshttps://github.com/mochammadfarkhan/rusantara/tree/cloud)
