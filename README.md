@@ -21,4 +21,4 @@ we are team of 6 with composition of 1 cc, 3 ml, and 2 md
 ## Branch
 - [machine learning](https://github.com/mochammadfarkhan/rusantara/tree/machine-learning)
 - [android](https://github.com/mochammadfarkhan/rusantara/tree/android)
-- [cloud computing](httpshttps://github.com/mochammadfarkhan/rusantara/tree/cloud)
+- [cloud computing](https://github.com/mochammadfarkhan/rusantara/tree/cloud)
