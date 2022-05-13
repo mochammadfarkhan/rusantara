@@ -4,6 +4,8 @@ C22-PS166 - Bangkit Capstone (Rusantara)
 Hello everyone!
 This is our repository for our bangkit capstone project.
 
+Our project combine the technology that we studied on bangkit to preserve and clasify indonesian traditional food using android app
+
 we are team of 6 with composition of 1 cc, 3 ml, and 2 md
 | Nama	| Bangkit-ID	| Path |
 | ----  | ----  | ---- |
