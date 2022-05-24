@@ -1,7 +1,8 @@
-package com.capstone.rusantara
+package com.capstone.rusantara.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.capstone.rusantara.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
