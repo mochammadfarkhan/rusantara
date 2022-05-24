@@ -1,2 +1,0 @@
-# rusantara
-bangkit capstone project
