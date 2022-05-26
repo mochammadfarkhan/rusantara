@@ -61,6 +61,10 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
     private fun playAnimation() {
         ObjectAnimator.ofFloat(binding.logo, View.TRANSLATION_X, -30f, 30f).apply {
             duration = 6000
