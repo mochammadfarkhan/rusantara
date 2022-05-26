@@ -1,4 +1,4 @@
-package com.capstone.rusantara.activity
+package com.capstone.rusantara.activity.register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
