@@ -9,5 +9,8 @@
     <string name="password">Password</string>
     <string name="ButtonRegister">Register</string>
     <string name="email">Email</string>
+    <string name="error_email">Enter email</string>
+    <string name="error_username">Enter username</string>
+    <string name="error_password">Enter password</string>
 
 </resources>
