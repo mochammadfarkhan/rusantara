@@ -5,7 +5,7 @@
 tradisional food recognition using machine leaning
 
 ## Dependecies
-1. python ()
+1. python
 2. Tensorflow
 3. matplotlib
 
