@@ -3,6 +3,11 @@
 
     <string name="invalid_email">Not a valid email</string>
     <string name="invalid_password">Password must be >5 characters</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register" translatable="false">Let\'s start with Register</string>
+    <string name="username">Username</string>
+    <string name="Email">Email</string>
+    <string name="password">Password</string>
+    <string name="ButtonRegister">Register</string>
+    <string name="email">Email</string>
+
 </resources>
