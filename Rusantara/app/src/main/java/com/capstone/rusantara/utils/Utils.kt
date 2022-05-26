@@ -26,7 +26,7 @@ fun createCustomTempFile(context: Context): File {
 fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
     val matrix = Matrix()
     return if (isBackCamera) {
-        matrix.postRotate(90f)
+        matrix.postRotate(0f)
         Bitmap.createBitmap(
             bitmap,
             0,
