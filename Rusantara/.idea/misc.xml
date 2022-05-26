@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_detail.xml" value="0.17806484295845998" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_main.xml" value="0.17806484295845998" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_register.xml" value="0.23097826086956522" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_upload_image.xml" value="0.17806484295845998" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_info.xml" value="0.10326086956521739" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/xml/file_paths.xml" value="0.17806484295845998" />
       </map>
     </option>
