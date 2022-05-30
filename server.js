@@ -24,7 +24,7 @@ const getFoodData = dataToGet => {
   return data;
 }
 
-app.get('/', checkIfAuthenticated, (req, res) => {
+app.get('/', (req, res) => {
   res.send('API for Rusantara app');
 })
 
