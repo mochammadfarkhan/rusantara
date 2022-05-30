@@ -31,7 +31,7 @@ app.get('/', checkIfAuthenticated, (req, res) => {
 app.post('/signup', createUser);
 
 app.get('/foods', checkIfAuthenticated, (req, res) => {
-  res.send(animals);
+  res.json(foods);
 })
 
 app.post('/predict', checkIfAuthenticated, upload.single('image'), (req, res) => {
