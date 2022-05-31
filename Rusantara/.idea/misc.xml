@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_detail.xml" value="0.1762917933130699" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_login.xml" value="0.1762917933130699" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_register.xml" value="0.1762917933130699" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_upload_image.xml" value="0.1762917933130699" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.113" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_login.xml" value="0.22" />
