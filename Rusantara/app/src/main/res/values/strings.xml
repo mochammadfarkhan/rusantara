@@ -15,5 +15,9 @@
     <string name="login">Let\'s Start With Login!</string>
     <string name="ButtonLogin">LOGIN</string>
     <string name="NoAcc">Don\'t have an account? Register</string>
+    <string name="camera">Camera</string>
+    <string name="galery">Galery</string>
+    <string name="upload">Upload</string>
+    <string name="preview_image">Preview Image</string>
 
 </resources>

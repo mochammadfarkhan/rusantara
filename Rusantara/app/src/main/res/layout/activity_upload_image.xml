@@ -6,4 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".activity.upload.UploadImageActivity">
 
+    <ImageView
+        android:id="@+id/previewImageView"
+        android:layout_width="match_parent"
+        android:layout_height="525dp"
+        android:contentDescription="@string/preview_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/color_10"
+        android:text="@string/camera"
+        app:layout_constraintTop_toBottomOf="@id/previewImageView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/galleryButton"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="@color/color_60"
+        android:text="@string/galery"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/cameraButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cameraButton"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="285dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="@color/color_30"
+        android:text="@string/upload"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
