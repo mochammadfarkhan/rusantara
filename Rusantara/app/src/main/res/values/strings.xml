@@ -19,5 +19,9 @@
     <string name="galery">Galery</string>
     <string name="upload">Upload</string>
     <string name="preview_image">Preview Image</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_profile">Profile</string>
 
 </resources>
