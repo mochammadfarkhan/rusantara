@@ -7,16 +7,59 @@
     tools:context=".activity.main.ui.profile.ProfileFragment">
 
     <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
+        android:id="@+id/prof_username"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Username" />
+
+    <TextView
+        android:id="@+id/prof_username_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        tools:text="Thomas07"
+        app:layout_constraintStart_toStartOf="@+id/prof_username"
+        app:layout_constraintTop_toBottomOf="@+id/prof_username" />
+
+    <TextView
+        android:id="@+id/prof_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Email"
+        app:layout_constraintStart_toStartOf="@+id/prof_username_value"
+        app:layout_constraintTop_toBottomOf="@+id/prof_username_value" />
+
+    <TextView
+        android:id="@+id/prof_email_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Thomas07@gmail.com"
+        app:layout_constraintStart_toStartOf="@+id/prof_email"
+        app:layout_constraintTop_toBottomOf="@+id/prof_email" />
+
+    <Button
+        android:id="@+id/button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/color_10"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prof_email_value"
+        tools:text="Logout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
