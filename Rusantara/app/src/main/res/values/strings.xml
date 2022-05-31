@@ -12,5 +12,8 @@
     <string name="error_email">Enter email</string>
     <string name="error_username">Enter username</string>
     <string name="error_password">Enter password</string>
+    <string name="login">Let\'s Start With Login!</string>
+    <string name="ButtonLogin">LOGIN</string>
+    <string name="NoAcc">Don\'t have an account? Register</string>
 
 </resources>
