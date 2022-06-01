@@ -25,5 +25,8 @@
     <string name="title_profile">Profile</string>
     <string name="food_name">Food Name</string>
     <string name="food_origin">Origin of Food</string>
+    <string name="info">Kue putu or putu bambu is an Indonesian kue. It is made of rice flour called suji and coloured green with pandan leaves, filled with palm sugar, steamed in bamboo tubes, and served with desiccated coconut. contoh ae</string>
+    <string name="location">Location</string>
+    <string name="specific_location">Jawa, Indonesia</string>
 
 </resources>
