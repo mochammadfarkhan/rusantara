@@ -10,6 +10,6 @@ COPY requirements.txt ./
 RUN pip install -r requirements.txt
 RUN npm install
 
-COPY . /app
+COPY . .
 
 CMD ["npm", "start"]
