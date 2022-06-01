@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt && npm install
 
 COPY . /opt/app
 
-CMD ["npm", "start"]
+CMD node server.js
