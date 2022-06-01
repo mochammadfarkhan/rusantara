@@ -1,16 +1,10 @@
 FROM nikolaik/python-nodejs:python3.10-nodejs17
-RUN mkdir /project
-WORKDIR /project
-COPY requirements.txt /project/requirements.txt
 
-RUN pip install -r requirements.txt
-COPY . /project/
+WORKDIR /app
+COPY package*.json .
+COPY requirements.txt .
 
-RUN mkdir /opt/app
-WORKDIR /opt/app
-COPY package*.json ./
-
-RUN npm install
+RUN pip install -r requirements.txt && npm install
 
 COPY . /opt/app
 
