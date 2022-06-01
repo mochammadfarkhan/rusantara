@@ -23,5 +23,7 @@
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_profile">Profile</string>
+    <string name="food_name">Food Name</string>
+    <string name="food_origin">Origin of Food</string>
 
 </resources>
