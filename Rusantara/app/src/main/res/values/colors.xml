@@ -2,8 +2,8 @@
 <resources>
     <color name="gray">#B5B5B5</color>
     <color name="black">#FF000000</color>
-    <color name="color_60">#FFFFFFFF</color>
+    <color name="color_60">#F6F4F2</color>
     <color name="color_30">#F18725</color>
     <color name="color_30_2">#DF7009</color>
-    <color name="color_10">#323232</color>
+    <color name="color_10">#020418</color>
 </resources>
