@@ -1,8 +1,17 @@
-FROM node:17.6
+FROM nikolaik/python-nodejs:python3.10-nodejs17
+RUN mkdir /project
+WORKDIR /project
+COPY requirements.txt /project/requirements.txt
 
-WORKDIR /app
+RUN pip install -r requirements.txt
+COPY . /project/
 
-COPY package*.json .
+RUN mkdir /opt/app
+WORKDIR /opt/app
+COPY package*.json ./
+
 RUN npm install
-COPY . .
-CMD node index.js
+
+COPY . /opt/app
+
+CMD ["npm", "start"]
