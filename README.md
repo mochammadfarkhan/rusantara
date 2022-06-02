@@ -127,3 +127,44 @@ private fun loginUser(email: String, password: String) {
     "nutrition": ""
   }
   ```
+
+## Get All Foods
+
+* URL
+  * /foods
+
+* Method
+  * GET
+
+* Headers
+  * Authorization : Bearer \<token\>
+
+* Response
+```json
+[
+  {
+    "name": "a",
+    "info": "Lorem Ipsum",
+    "ingredients": "Lorem Ipsum",
+    "nutritions": "",
+  },
+  {
+    "name": "b",
+    "info": "Lorem Ipsum",
+    "ingredients": "Lorem Ipsum",
+    "nutritions": "",
+  },
+  {
+    "name": "c",
+    "info": "Lorem Ipsum",
+    "ingredients": "Lorem Ipsum",
+    "nutritions": "",
+  },
+  {
+    "name": "d",
+    "info": "Lorem Ipsum",
+    "ingredients": "Lorem Ipsum",
+    "nutritions": "",
+  }
+]
+```
