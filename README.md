@@ -12,15 +12,20 @@ http://34.101.66.254:8080
 
 * URL
   * /signup
+
 * Method
   * POST
+
 * Content-Type
   * application/json
+
 * Request Body
   * **username** as ***string**
   * **email** as **string**
   * **password** as **string**
+
 * Request Body Example
+
   ```json
   {
     "username": "tester",
@@ -28,6 +33,7 @@ http://34.101.66.254:8080
     "password": "tes123"
   }
   ```
+
 * response
   ```json
   {
@@ -53,15 +59,20 @@ http://34.101.66.254:8080
   ```
 
 ## Predict
+
 * URL
   * /predict
+
 * Method
   * POST
+
 * Headers
   * Content-Type : mulitpart/form-data
   * Authorization : Bearer \<token\>
+
 * Request Body
   * image as file
+  
 * Response
   ```json
   {
