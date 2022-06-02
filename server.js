@@ -27,27 +27,27 @@ app.get("/", (req, res) => {
   res.send("API for Rusantara app");
 });
 
-app.post("/signup", createUser);
+// app.post("/signup", createUser);
 
-app.get("/foods", checkIfAuthenticated, (req, res) => {
-  res.json(foods);
-});
+// app.get("/foods", checkIfAuthenticated, (req, res) => {
+//   res.json(foods);
+// });
 
-app.post(
-  "/predict",
-  upload.single("image"),
-  checkIfAuthenticated,
-  (req, res) => {
-    const options = {
-      args: req.file.filename,
-    };
+// app.post(
+//   "/predict",
+//   upload.single("image"),
+//   checkIfAuthenticated,
+//   (req, res) => {
+//     const options = {
+//       args: req.file.filename,
+//     };
 
-    PythonShell.run("app.py", options, (err, results) => {
-      const result = getFoodData(results[0]);
-      res.json(result);
-    });
-  }
-);
+//     PythonShell.run("app.py", options, (err, results) => {
+//       const result = getFoodData(results[0]);
+//       res.json(result);
+//     });
+//   }
+// );
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
