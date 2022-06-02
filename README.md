@@ -8,7 +8,7 @@
 http://34.101.66.254:8080
 
 ---
-## Register
+## Sign Up
 
 * URL
   * /signup
@@ -43,20 +43,50 @@ http://34.101.66.254:8080
     "displayName": "tester",
     "disabled": false,
     "metadata": {
-        "lastSignInTime": null,
-        "creationTime": "Thu, 02 Jun 2022 14:26:15 GMT"
+      "lastSignInTime": null,
+      "creationTime": "Thu, 02 Jun 2022 14:26:15 GMT"
     },
     "tokensValidAfterTime": "Thu, 02 Jun 2022 14:26:15 GMT",
     "providerData": [
-        {
-          "uid": "test@gmail.com",
-          "displayName": "tester",
-          "email": "test@gmail.com",
-          "providerId": "password"
-        }
+      {
+        "uid": "test@gmail.com",
+        "displayName": "tester",
+        "email": "test@gmail.com",
+        "providerId": "password"
+      }
     ]
   }
   ```
+
+## Sign In
+
+To Sign In, you need to add the Firebase client SDK to your project. For android studio, you can look [here](https://www.youtube.com/watch?v=W49V1s_hKO0) on how to connect Firebase to android app. You also need to add firebase authentication to your app by using the firebase plugin on android studio.
+
+Once the step is done, in LoginActivity before the `onCreate` method declare the firebase auth using:
+```kotlin
+private lateinit var auth: FirebaseAauth
+```
+inside the `onCreate` method, initialize the auth :
+```kotlin
+auth = FirebaseAuth.getInstance()
+```
+the code below is the example of a function to signIn with firebase auth
+```kotlin
+private fun loginUser(email: String, password: String) {
+    auth.signInWithEmailAndPassword(email, password)
+        .addOnCompleteListener(this){
+            if (it.isSuccessful){
+                Intent(this@LoginActivity, MainActivity::class.java).also {intent ->
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    val firebaseUser = auth.currentUser
+                }
+            } else {
+                Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+            }
+        }
+}
+```
 
 ## Predict
 
@@ -70,9 +100,24 @@ http://34.101.66.254:8080
   * Content-Type : mulitpart/form-data
   * Authorization : Bearer \<token\>
 
+  To get the token, you need to run `getIdToken` on the currrent logged in userr. Example code:
+  ```kotlin
+  private fun getToken() {
+    val firebaseUser = auth.currentUser
+    if (firebaseUser != null) {
+        firebaseUser.getIdToken(false).addOnSuccessListener(OnSuccessListener<GetTokenResult> { result ->
+            val idToken = result.token
+            return idToken    
+        })
+    } else {
+        return
+    }
+  }
+  ```
+
 * Request Body
   * image as file
-  
+
 * Response
   ```json
   {
