@@ -60,7 +60,7 @@ http://34.101.66.254:8080
 
 ## Sign In
 
-To Sign In, you need to add the Firebase client SDK to your project. For android studio, you can look [here](https://www.youtube.com/watch?v=W49V1s_hKO0) on how to connect Firebase to android app. You also need to add firebase authentication to your app by using the firebase plugin on android studio.
+To Sign In, you need to add the Firebase client SDK to your project. For android studio. You also need to add firebase authentication to your app by using the firebase plugin on android studio. [Guide](https://drive.google.com/file/d/1IaDXdd9RcsF1tk1fsBpHK3JoVm4RsW7a/view?usp=sharing)
 
 Once the step is done, in LoginActivity before the `onCreate` method declare the firebase auth using:
 ```kotlin
