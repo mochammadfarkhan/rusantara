@@ -24,7 +24,7 @@ const getFoodData = (dataToGet) => {
 };
 
 app.get("/", (req, res) => {
-  res.send("API for Rusantara app");
+  res.json({ message: "API for Rusantara app" });
 });
 
 app.post("/signup", addUser);
