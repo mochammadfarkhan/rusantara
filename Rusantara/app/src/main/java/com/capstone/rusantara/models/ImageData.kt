@@ -5,5 +5,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ImageData(
-    val error: Boolean
+    val name: String,
+    val info: String,
+    val ingredients: String,
+    val nutrition: String
 ) : Parcelable
