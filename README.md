@@ -13,13 +13,13 @@ http://34.101.66.254:8080
 Create new user
 
 * URL
-  * /signup
+  * `/signup`
 
 * Method
-  * POST
+  * `POST`
 
 * Content-Type
-  * application/json
+  * `application/json`
 
 * Request Body
   * **username** as ***string**
