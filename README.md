@@ -10,6 +10,8 @@ http://34.101.66.254:8080
 
 ## Sign Up
 
+Create new user
+
 * URL
   * /signup
 
@@ -90,6 +92,8 @@ private fun loginUser(email: String, password: String) {
 
 ## Predict
 
+Return json data about the food predicted.
+
 * URL
   * /predict
 
@@ -129,6 +133,8 @@ private fun loginUser(email: String, password: String) {
   ```
 
 ## Get All Foods
+
+Return json data about all foods.
 
 * URL
   * /foods
