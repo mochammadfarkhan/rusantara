@@ -3,7 +3,7 @@
 > API untuk mencari berbagai macam jajanan tradisional yang ada di indonesia
 
 <!-- == api == -->
-# Endpoint
+## Endpoint
 
 http://34.101.66.254:8080
 
