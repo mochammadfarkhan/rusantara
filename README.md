@@ -100,7 +100,7 @@ private fun loginUser(email: String, password: String) {
   * Content-Type : mulitpart/form-data
   * Authorization : Bearer \<token\>
 
-  To get the token, you need to run `getIdToken` on the currrent logged in userr. Example code:
+  To get the token, you need to run `getIdToken` on the currrent logged in user in the client side. Example code on how to get the token:
   ```kotlin
   private fun getToken() {
     val firebaseUser = auth.currentUser
