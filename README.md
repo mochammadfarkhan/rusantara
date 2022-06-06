@@ -22,9 +22,9 @@ Create new user
   * `application/json`
 
 * Request Body
-  * **username** as ***string**
-  * **email** as **string**
-  * **password** as **string**
+  * `username` as `string`
+  * `email` as `string`
+  * `password` as `string`
 
 * Request Body Example
 
@@ -64,7 +64,7 @@ Create new user
 
 To Sign In, you need to add the Firebase client SDK to your project. For android studio. You also need to add firebase authentication to your app by using the firebase plugin on android studio. [Guide](https://drive.google.com/file/d/1IaDXdd9RcsF1tk1fsBpHK3JoVm4RsW7a/view?usp=sharing)
 
-Once the step is done, in LoginActivity before the `onCreate` method declare the firebase auth using:
+Once the step is done, in LoginActivity before the `onCreate` method, declare the firebase auth using:
 ```kotlin
 private lateinit var auth: FirebaseAauth
 ```
@@ -95,14 +95,14 @@ private fun loginUser(email: String, password: String) {
 Return json data about the food predicted.
 
 * URL
-  * /predict
+  * `/predict`
 
 * Method
-  * POST
+  * `POST`
 
 * Headers
-  * Content-Type : mulitpart/form-data
-  * Authorization : Bearer \<token\>
+  * `Content-Type` : `mulitpart/form-data`
+  * `Authorization` : `Bearer \<token\>`
 
   To get the token, you need to run `getIdToken` on the currrent logged in user in the client side. Example code on how to get the token:
   ```kotlin
@@ -120,7 +120,7 @@ Return json data about the food predicted.
   ```
 
 * Request Body
-  * image as file
+  * `image` as `file`
 
 * Response
   ```json
@@ -137,13 +137,13 @@ Return json data about the food predicted.
 Return json data about all foods.
 
 * URL
-  * /foods
+  * `/foods`
 
 * Method
-  * GET
+  * `GET`
 
 * Headers
-  * Authorization : Bearer \<token\>
+  * `Authorization` : `Bearer \<token\>`
 
 * Response
 ```json
