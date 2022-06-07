@@ -31,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth = FirebaseAuth.getInstance()
         preferencesHelper = PreferencesHelper(this)
 
         setupView()
@@ -41,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        auth = FirebaseAuth.getInstance()
         val firebaseUser = auth.currentUser
         if (firebaseUser != null) {
             val intent = Intent(this, MenuActivity::class.java)
