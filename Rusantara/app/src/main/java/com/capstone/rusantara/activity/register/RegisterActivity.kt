@@ -8,8 +8,16 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import com.capstone.rusantara.R
+import com.capstone.rusantara.api.ApiConfig
 import com.capstone.rusantara.databinding.ActivityRegisterBinding
+import com.capstone.rusantara.models.SignupResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -55,15 +63,60 @@ class RegisterActivity : AppCompatActivity() {
                     binding.idPassword.error = R.string.error_password.toString()
                 }
                 else -> {
-
+                    val service = ApiConfig.getApiService().signupUser(username, email, password)
+                    service.enqueue(object : Callback<SignupResponse> {
+                        override fun onResponse(
+                            call: Call<SignupResponse>,
+                            response: Response<SignupResponse>
+                        ) {
+                            if (response.isSuccessful) {
+                                val responseBody = response.body()
+                                if (responseBody != null) {
+                                    AlertDialog.Builder(this@RegisterActivity).apply {
+                                        setTitle("Sign Up")
+                                        setMessage("Account succesfully created")
+                                        setPositiveButton("OK") { _, _ ->
+                                            finish()
+                                        }
+                                        create()
+                                        show()
+                                    }
+                                }
+                            } else {
+                                Toast.makeText(this@RegisterActivity, "Sign up Failed", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
+                            Toast.makeText(this@RegisterActivity, "Retrofit instance failed", Toast.LENGTH_SHORT).show()
+                        }
+                    })
                 }
             }
         }
     }
 
-    private fun showLoading(isLoading: Boolean) {
-        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-    }
+//    private fun showLoading(isLoading: Boolean) {
+//        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+//    }
+
+//    private fun registerValidation() {
+//        registerViewModel.message.observe(this) {
+//            if (it.error) {
+//                Toast.makeText(
+//                    this@RegisterActivity,
+//                    registerViewModel.message.value?.message.toString(),
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//            } else {
+//                Toast.makeText(
+//                    this@RegisterActivity,
+//                    registerViewModel.message.value?.message.toString(),
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//                finish()
+//            }
+//        }
+//    }
 
     private fun playAnimation() {
         ObjectAnimator.ofFloat(binding.logo, View.TRANSLATION_X, -30f, 30f).apply {
