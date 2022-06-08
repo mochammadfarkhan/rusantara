@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.capstone.rusantara.activity.detail.DetailActivity
+import com.capstone.rusantara.activity.detail.DetailActivity.Companion.EXTRA_DATA
 import com.capstone.rusantara.api.ApiConfig
 import com.capstone.rusantara.databinding.ActivityUploadImageBinding
 import com.capstone.rusantara.models.ImageData
@@ -144,6 +145,7 @@ class UploadImageActivity : AppCompatActivity() {
                             val responseBody = response.body()
                             if (responseBody != null) {
                                 val intent = Intent(applicationContext, DetailActivity::class.java)
+                                intent.putExtra(EXTRA_DATA, responseBody)
                                 startActivity(intent)
                             }
                         } else {

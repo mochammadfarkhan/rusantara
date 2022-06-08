@@ -44,20 +44,20 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setupViewPager() {
         val sectionPagerAdapter = SectionsPagerAdapter(this)
-//        val viewPager: ViewPager2 = binding.viewPager
-//        viewPager.adapter = sectionPagerAdapter
-//        val tabs: TabLayout = binding.tabs
-//
-//        TabLayoutMediator(tabs, viewPager) { tab, position ->
-//            tab.text = resources.getString(TAB_TITLES[position])
-//        }.attach()
+        val viewPager: ViewPager2 = binding.viewPager
+        viewPager.adapter = sectionPagerAdapter
+        val tabs: TabLayout = binding.tabs
+
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
     }
 
     private fun setupData() {
         val imageData = getImageData()
 
 //        Glide.with(applicationContext)
-//            .load(imageData?.photoUrl)
+//            .load(imageData.photoUrl)
 //            .info(binding.imgItemPhoto)
 //        binding.apply {
 //

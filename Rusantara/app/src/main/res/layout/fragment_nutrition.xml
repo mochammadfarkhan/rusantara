@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.detail.fragment.NutrientFragment">
+    tools:context=".activity.detail.fragment.NutritionFragment">
 
     <TextView
+        android:id="@+id/nutrition"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="24dp"
