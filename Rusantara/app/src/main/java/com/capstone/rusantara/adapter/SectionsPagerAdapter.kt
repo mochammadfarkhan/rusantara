@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.capstone.rusantara.activity.detail.fragment.InfoFragment
 import com.capstone.rusantara.activity.detail.fragment.IngredientsFragment
-import com.capstone.rusantara.activity.detail.fragment.NutrientFragment
+import com.capstone.rusantara.activity.detail.fragment.NutritionFragment
 
 class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 
@@ -19,7 +19,7 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         when (position) {
             0 -> fragment = InfoFragment()
             1 -> fragment = IngredientsFragment()
-            2 -> fragment = NutrientFragment()
+            2 -> fragment = NutritionFragment()
         }
 
         return fragment as Fragment

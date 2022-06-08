@@ -5,28 +5,37 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.capstone.rusantara.databinding.FragmentNutrientBinding
+import com.capstone.rusantara.databinding.FragmentNutritionBinding
 import com.capstone.rusantara.models.ImageData
 
-class NutrientFragment : Fragment() {
+class NutritionFragment : Fragment() {
 
-    private var _binding: FragmentNutrientBinding? = null
+    private var _binding: FragmentNutritionBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNutrientBinding.inflate(inflater, container, false)
+        _binding = FragmentNutritionBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageData = requireActivity().intent
-            .getParcelableExtra<ImageData>(InfoFragment.EXTRA_DATA) as ImageData
+        setupData()
+    }
 
+    private fun setupData() {
+        val imageData = getImageData()
+
+        binding.nutrition.text = imageData.nutrition
+    }
+
+    private fun getImageData(): ImageData {
+        return requireActivity().intent
+            .getParcelableExtra<ImageData>(EXTRA_DATA) as ImageData
     }
 
     companion object {

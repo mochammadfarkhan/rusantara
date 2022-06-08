@@ -44,24 +44,22 @@ class DetailActivity : AppCompatActivity() {
 
     private fun setupViewPager() {
         val sectionPagerAdapter = SectionsPagerAdapter(this)
-//        val viewPager: ViewPager2 = binding.viewPager
-//        viewPager.adapter = sectionPagerAdapter
-//        val tabs: TabLayout = binding.tabs
-//
-//        TabLayoutMediator(tabs, viewPager) { tab, position ->
-//            tab.text = resources.getString(TAB_TITLES[position])
-//        }.attach()
+        val viewPager: ViewPager2 = binding.viewPager
+        viewPager.adapter = sectionPagerAdapter
+        val tabs: TabLayout = binding.tabs
+
+        TabLayoutMediator(tabs, viewPager) { tab, position ->
+            tab.text = resources.getString(TAB_TITLES[position])
+        }.attach()
     }
 
     private fun setupData() {
         val imageData = getImageData()
 
-//        Glide.with(applicationContext)
-//            .load(imageData?.photoUrl)
-//            .info(binding.imgItemPhoto)
-//        binding.apply {
-//
-//        }
+        Glide.with(applicationContext)
+            .load(imageData.img)
+            .into(binding.imgFood)
+        binding.foodName.text = imageData.name
     }
 
     private fun getImageData(): ImageData {
@@ -73,7 +71,9 @@ class DetailActivity : AppCompatActivity() {
 
         @StringRes
         private val TAB_TITLES = intArrayOf(
-
+            R.string.food_info,
+            R.string.food_ingredients,
+            R.string.food_nutrition
         )
     }
 }

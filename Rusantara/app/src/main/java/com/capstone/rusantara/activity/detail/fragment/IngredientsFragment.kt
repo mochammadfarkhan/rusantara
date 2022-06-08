@@ -24,9 +24,18 @@ class IngredientsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageData = requireActivity().intent
-            .getParcelableExtra<ImageData>(InfoFragment.EXTRA_DATA) as ImageData
+        setupData()
+    }
 
+    private fun setupData() {
+        val imageData = getImageData()
+
+        binding.ingredients.text = imageData.ingredients
+    }
+
+    private fun getImageData(): ImageData {
+        return requireActivity().intent
+            .getParcelableExtra<ImageData>(EXTRA_DATA) as ImageData
     }
 
     companion object {
