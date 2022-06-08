@@ -20,39 +20,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="24dp"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:text="@string/location"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/img_location"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+<!--    <TextView-->
+<!--        android:id="@+id/location"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="4dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:textSize="18sp"-->
+<!--        android:gravity="center"-->
+<!--        android:text="@string/location"-->
+<!--        android:textStyle="bold"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/img_location"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/description" />-->
 
-    <ImageView
-        android:id="@+id/img_location"
-        android:layout_width="24dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/ic_baseline_location_on_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description"
-        tools:ignore="ContentDescription" />
+<!--    <ImageView-->
+<!--        android:id="@+id/img_location"-->
+<!--        android:layout_width="24dp"-->
+<!--        android:layout_height="25dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:background="@drawable/ic_baseline_location_on_24"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/description"-->
+<!--        tools:ignore="ContentDescription" />-->
 
-    <TextView
-        android:id="@+id/specific_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/specific_location"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/img_location"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+<!--    <TextView-->
+<!--        android:id="@+id/specific_location"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:text="@string/specific_location"-->
+<!--        android:textSize="18sp"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/img_location"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/location" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

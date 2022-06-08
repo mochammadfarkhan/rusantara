@@ -11,7 +11,7 @@
         android:layout_width="300dp"
         android:layout_height="290dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"
-        android:textSize="30sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:id="@+id/usernameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:alpha="0"
         android:text="@string/username"
@@ -44,19 +44,23 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvUsername"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTextView">
+        app:layout_constraintTop_toBottomOf="@+id/usernameTextView"
+        app:startIconDrawable="@drawable/ic_baseline_account_circle_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/idUsername"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/username"
-            tools:ignore="Autofill,TextFields" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            tools:ignore="TextFields" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,7 +68,7 @@
         android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:alpha="0"
         android:text="@string/email"
@@ -74,19 +78,23 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvEmail"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailTextView">
+        app:layout_constraintTop_toBottomOf="@id/emailTextView"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.capstone.rusantara.customview.EmailEditText
             android:id="@+id/idEmail"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/Email"
-            tools:ignore="Autofill,TextFields" />
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -94,7 +102,7 @@
         android:id="@+id/passwordTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:alpha="0"
         android:text="@string/password"
@@ -104,20 +112,23 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvPassword"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="45dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:alpha="0"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/passwordTextView">
+        app:layout_constraintTop_toBottomOf="@id/passwordTextView"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.capstone.rusantara.customview.PasswordEditText
             android:id="@+id/idPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            tools:ignore="Autofill" />
+            android:ems="10"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

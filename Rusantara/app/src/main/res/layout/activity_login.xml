@@ -11,7 +11,7 @@
         android:layout_width="300dp"
         android:layout_height="290dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,13 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textSize="30sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
-
-
 
     <TextView
         android:id="@+id/emailTextView"
@@ -95,6 +93,7 @@
             android:id="@+id/idPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
