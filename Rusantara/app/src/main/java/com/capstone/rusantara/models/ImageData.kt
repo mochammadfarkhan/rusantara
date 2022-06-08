@@ -5,6 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class ImageData(
+    val img: String,
     val name: String,
     val info: String,
     val ingredients: String,

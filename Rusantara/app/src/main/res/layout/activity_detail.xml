@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/food_example" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/backIcon"
         android:layout_width="65dp"
         android:layout_height="54dp"
         app:layout_constraintStart_toStartOf="parent"

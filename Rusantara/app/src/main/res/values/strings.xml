@@ -29,5 +29,7 @@
     <string name="location">Location</string>
     <string name="specific_location">Jawa, Indonesia</string>
     <string name="ingredients">Info Ingredients</string>
-
+    <string name="food_info">Info</string>
+    <string name="food_ingredients">Ingredients</string>
+    <string name="food_nutrition">Nutrition</string>
 </resources>
