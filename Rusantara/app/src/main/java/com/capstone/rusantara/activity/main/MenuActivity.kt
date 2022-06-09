@@ -29,7 +29,7 @@ class MenuActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-        //setupView()
+        setupView()
     }
 
     private fun setupView() {
