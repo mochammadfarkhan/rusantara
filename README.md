@@ -178,7 +178,7 @@ Return json data about all foods.
 ## Search For Foods
 
 * URL
-  * `/foods`
+  * `/foods/{search query}`
 
 * Method
   * `GET`
@@ -196,7 +196,7 @@ Return json data about all foods.
     "nutritions": "",
   },
   
-  ...
+  ....
   
 ]
 ```
