@@ -5,7 +5,7 @@
 <!-- == api == -->
 ## Endpoint
 
-http://34.101.66.254:8080
+(https://rusantara-api-tsbwg7l2lq-et.a.run.app)
 
 
 ## Sign Up
