@@ -118,6 +118,7 @@ Return json data about the food predicted.
     }
   }
   ```
+> You might want to run the function above everytime the client want to access the api where the bearer Token needed.
 
 * Request Body
   * `image` as `file`
