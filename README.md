@@ -195,9 +195,7 @@ Return json data about all foods.
     "ingredients": "Lorem Ipsum",
     "nutritions": "",
   },
-  
-  ....
-  
+  ...
 ]
 ```
 
