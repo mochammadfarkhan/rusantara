@@ -5,7 +5,7 @@
 <!-- == api == -->
 ## Endpoint
 
-(https://rusantara-api-tsbwg7l2lq-et.a.run.app)
+https://rusantara-api-tsbwg7l2lq-et.a.run.app
 
 
 ## Sign Up
