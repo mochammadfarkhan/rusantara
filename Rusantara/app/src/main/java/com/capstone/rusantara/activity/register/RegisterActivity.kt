@@ -87,7 +87,7 @@ class RegisterActivity : AppCompatActivity() {
                             }
                         }
                         override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
-                            Toast.makeText(this@RegisterActivity, "Retrofit instance failed", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@RegisterActivity, t.message, Toast.LENGTH_SHORT).show()
                         }
                     })
                 }
