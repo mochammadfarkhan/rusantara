@@ -174,3 +174,31 @@ Return json data about all foods.
   }
 ]
 ```
+
+## Search For Foods
+
+* URL
+  * `/foods`
+
+* Method
+  * `GET`
+
+* Headers
+  * `Authorization` : `Bearer \<token\>`
+
+* Response
+```json
+[
+  {
+    "name": "a",
+    "info": "Lorem Ipsum",
+    "ingredients": "Lorem Ipsum",
+    "nutritions": "",
+  },
+  
+  ...
+  
+]
+```
+
+> The response can be multiple, single, or no data.
