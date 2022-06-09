@@ -3,10 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable-v24/ic_account_circle_black_24dp.xml" value="0.194" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable-v24/ic_baseline_email_24.xml" value="0.1935" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable-v24/ic_baseline_lock_24.xml" value="0.1935" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable-v24/ic_dashboard_black_24dp.xml" value="0.194" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.194" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1495" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1495" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1935" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.1495" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1495" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.1935" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1495" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1495" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1495" />
@@ -25,6 +32,7 @@
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_ingredients.xml" value="0.14" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_nutrient.xml" value="0.1" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_nutrition.xml" value="0.1671195652173913" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_search.xml" value="0.16018518518518518" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />

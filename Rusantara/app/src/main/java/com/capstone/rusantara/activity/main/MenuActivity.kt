@@ -15,19 +15,13 @@ import com.capstone.rusantara.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMenuBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_menu)
 
-        binding = ActivityMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        setupView()
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_menu)
+        val navController = findNavController(R.id.nav_host_fragment)
 
         val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.navigation_home, R.id.navigation_search, R.id.navigation_profile
@@ -35,6 +29,7 @@ class MenuActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        setupView()
     }
 
     private fun setupView() {

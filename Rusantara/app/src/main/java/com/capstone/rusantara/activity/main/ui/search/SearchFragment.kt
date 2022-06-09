@@ -40,13 +40,12 @@ class SearchFragment : Fragment() {
             ViewModelProvider(this)[SearchViewModel::class.java]
 
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
 //        val textView: TextView = binding.
 //        dashboardViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -100,7 +99,7 @@ class SearchFragment : Fragment() {
         firebaseUser?.getIdToken(false)?.addOnSuccessListener { result ->
             val idToken = result.token
 
-            val service = ApiConfig.getApiService().getAllFoods("Bearer $idToken")
+            val service = ApiConfig.getApiService().getAllFoods(query, "Bearer $idToken")
             service.enqueue(object : Callback<List<ImageData>> {
                 override fun onResponse(
                     call: Call<List<ImageData>>,

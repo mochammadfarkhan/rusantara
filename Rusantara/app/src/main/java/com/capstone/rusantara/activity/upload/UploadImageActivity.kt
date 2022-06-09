@@ -141,20 +141,21 @@ class UploadImageActivity : AppCompatActivity() {
                         call: Call<ImageData>,
                         response: Response<ImageData>
                     ) {
-                        if (response.isSuccessful) {
+                        if (!response.isSuccessful) {
                             val responseBody = response.body()
                             if (responseBody != null) {
                                 val intent = Intent(applicationContext, DetailActivity::class.java)
                                 intent.putExtra(EXTRA_DATA, responseBody)
                                 startActivity(intent)
                             }
-                        } else {
-                            Toast.makeText(
-                                this@UploadImageActivity,
-                                response.message(),
-                                Toast.LENGTH_SHORT
-                            ).show()
                         }
+//                        else {
+//                            Toast.makeText(
+//                                this@UploadImageActivity,
+//                                response.message(),
+//                                Toast.LENGTH_SHORT
+//                            ).show()
+//                        }
                     }
 
                     override fun onFailure(call: Call<ImageData>, t: Throwable) {

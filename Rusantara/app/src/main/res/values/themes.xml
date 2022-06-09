@@ -2,9 +2,9 @@
     <!-- Base application theme. -->
     <style name="Theme.Rusantara" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="bottomNavigationStyle">@color/color_30</item>
+<!--        <item name="bottomNavigationStyle">@color/color_30</item>-->
         <item name="colorPrimary">@color/color_60</item>
-        <item name="colorPrimaryVariant">@color/color_30</item>
+        <item name="colorPrimaryVariant">@color/color_60</item>
         <item name="colorOnPrimary">@color/color_60</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_10</item>

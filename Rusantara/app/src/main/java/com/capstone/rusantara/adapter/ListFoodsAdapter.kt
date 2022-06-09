@@ -20,14 +20,13 @@ class ListFoodsAdapter(private val listFoods: List<ImageData>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (img, name, info) = listFoods[position]
+//        val (img, name, info) = listFoods[position]
 
         Glide.with(holder.itemView.context)
-            .load(img)
-            .circleCrop()
+            .load(listFoods[position].img)
             .into(holder.binding.imgItemPhoto)
-        holder.binding.foodName.text = name
-        holder.binding.foodOrigin.text = info
+        holder.binding.foodName.text = listFoods[position].name
+        holder.binding.foodOrigin.text = listFoods[position].location
 
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listFoods[position])
