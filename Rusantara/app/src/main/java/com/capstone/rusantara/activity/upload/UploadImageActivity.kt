@@ -5,9 +5,12 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -45,6 +48,7 @@ class UploadImageActivity : AppCompatActivity() {
         binding = ActivityUploadImageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupView()
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
@@ -190,6 +194,19 @@ class UploadImageActivity : AppCompatActivity() {
 //            })
         }
 
+    }
+
+    private fun setupView() {
+        @Suppress("DEPRECATION")
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
+        supportActionBar?.hide()
     }
 
     override fun onRequestPermissionsResult(
