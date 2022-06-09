@@ -32,7 +32,15 @@ app.post("/signin", authenticate);
 // app.get("/signout", signOut);
 
 app.get("/foods", checkIfAuthenticated, (req, res) => {
-  res.json(foods);
+    res.json(foods);
+  });
+  
+app.get("/foods/:name", checkIfAuthenticated, (req, res) => {
+  const foodToSearch = req.params.name;
+  const foodsResult = foods.filter(food => food.name.includes(foodToSearch));
+  if (foodsResult.length === 0) 
+    res.status(404).json({msg: "No food found"});
+  else res.json(foodsResult);
 });
 
 app.post(
