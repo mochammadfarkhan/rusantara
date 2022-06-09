@@ -8,6 +8,7 @@ data class ImageData(
     val img: String,
     val name: String,
     val info: String,
+    val location: String,
     val ingredients: String,
     val nutrition: String
 ) : Parcelable
