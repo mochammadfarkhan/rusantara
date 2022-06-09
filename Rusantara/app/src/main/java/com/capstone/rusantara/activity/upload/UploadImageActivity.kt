@@ -160,7 +160,7 @@ class UploadImageActivity : AppCompatActivity() {
                     override fun onFailure(call: Call<ImageData>, t: Throwable) {
                         Toast.makeText(
                             this@UploadImageActivity,
-                            "Retrofit instance failed",
+                            t.message,
                             Toast.LENGTH_SHORT
                         ).show()
                     }
