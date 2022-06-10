@@ -9,20 +9,20 @@ The number of traditional Indonesian foods makes it difficult for people to reco
 ## Dependecies
 This project is built using Deep Learning Technology with Convolutional Neural Network algorithm and Transfer Learning. Here is the library that was used in this project.
 
-Python 3.7.0
-TensorFlow 2.0.0
-NumPy 1.21.6
-Matplotlib 3.5.1
+- Python 3.7.0
+- TensorFlow 2.0.0
+- NumPy 1.21.6
+- Matplotlib 3.5.1
 
 ## Dataset 
 We are gathering our dataset manualy from many sources. Consisting 6 indonesian traditional foods to classify, including :
 
-Clorot
-Dadar Gulung
-Klepon
-Lapis Legit
-Onde-Onde
-Putu Ayu
+- Clorot
+- Dadar Gulung
+- Klepon
+- Lapis Legit
+- Onde-Onde
+- Putu Ayu
 
 
 ## Fixed model
