@@ -11,13 +11,14 @@ import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.capstone.rusantara.R
+import com.capstone.rusantara.activity.login.LoginActivity
 import com.capstone.rusantara.adapter.SectionsPagerAdapter
 import com.capstone.rusantara.databinding.ActivityDetailBinding
 import com.capstone.rusantara.models.ImageData
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class DetailActivity : AppCompatActivity(), View.OnClickListener {
+class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
 
@@ -31,12 +32,6 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
         setupData()
     }
 
-    override fun onClick(view: View) {
-        if (view.id == R.id.backIcon) {
-            finish()
-        }
-    }
-
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -48,6 +43,10 @@ class DetailActivity : AppCompatActivity(), View.OnClickListener {
             )
         }
         supportActionBar?.hide()
+
+        binding.backIcon.setOnClickListener{
+            finish()
+        }
     }
 
     private fun setupViewPager() {

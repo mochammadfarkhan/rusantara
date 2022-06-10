@@ -14,6 +14,7 @@ import com.capstone.rusantara.R
 import com.capstone.rusantara.activity.main.MenuActivity
 import com.capstone.rusantara.activity.register.RegisterActivity
 import com.capstone.rusantara.databinding.ActivityLoginBinding
+import com.capstone.rusantara.utils.Constant.Companion.PREF_EMAIL
 import com.capstone.rusantara.utils.PreferencesHelper
 import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
@@ -83,6 +84,7 @@ class LoginActivity : AppCompatActivity() {
                     auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this){
                             if (it.isSuccessful){
+                                preferencesHelper.put(PREF_EMAIL, email)
                                 Intent(this@LoginActivity, MenuActivity::class.java).also { intent ->
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     startActivity(intent)

@@ -7,7 +7,7 @@
     tools:context=".activity.main.ui.profile.ProfileFragment">
 
     <TextView
-        android:id="@+id/prof_username"
+        android:id="@+id/prof_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
@@ -15,38 +15,18 @@
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:text="@string/email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Username" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/prof_username_value"
+        android:id="@+id/prof_email_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="normal"
-        tools:text="Thomas07"
-        app:layout_constraintStart_toStartOf="@+id/prof_username"
-        app:layout_constraintTop_toBottomOf="@+id/prof_username" />
-
-    <TextView
-        android:id="@+id/prof_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        tools:text="Email"
-        app:layout_constraintStart_toStartOf="@+id/prof_username_value"
-        app:layout_constraintTop_toBottomOf="@+id/prof_username_value" />
-
-    <TextView
-        android:id="@+id/prof_email_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         tools:text="Thomas07@gmail.com"
         app:layout_constraintStart_toStartOf="@+id/prof_email"
         app:layout_constraintTop_toBottomOf="@+id/prof_email" />
@@ -58,8 +38,10 @@
         android:layout_marginTop="18dp"
         android:layout_marginEnd="28dp"
         android:backgroundTint="@color/color_10"
+        android:text="@string/logout"
+        android:textSize="12sp"
+        app:cornerRadius="6dp"
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prof_email_value"
-        tools:text="Logout" />
+        app:layout_constraintTop_toBottomOf="@+id/prof_email_value" />
 </androidx.constraintlayout.widget.ConstraintLayout>
