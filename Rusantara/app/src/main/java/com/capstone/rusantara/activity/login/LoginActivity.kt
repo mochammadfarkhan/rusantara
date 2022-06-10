@@ -66,7 +66,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.toRegister.setOnClickListener {
             val intent = Intent(applicationContext, RegisterActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 

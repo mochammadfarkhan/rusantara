@@ -9,12 +9,11 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
 import com.capstone.rusantara.R
 import com.capstone.rusantara.api.ApiConfig
 import com.capstone.rusantara.databinding.ActivityRegisterBinding
-import com.capstone.rusantara.models.SignupResponse
+import com.capstone.rusantara.models.RegisterResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -64,10 +63,10 @@ class RegisterActivity : AppCompatActivity() {
                 }
                 else -> {
                     val service = ApiConfig.getApiService().signupUser(username, email, password)
-                    service.enqueue(object : Callback<SignupResponse> {
+                    service.enqueue(object : Callback<RegisterResponse> {
                         override fun onResponse(
-                            call: Call<SignupResponse>,
-                            response: Response<SignupResponse>
+                            call: Call<RegisterResponse>,
+                            response: Response<RegisterResponse>
                         ) {
                             if (response.isSuccessful) {
                                 val responseBody = response.body()
@@ -86,7 +85,7 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.makeText(this@RegisterActivity, "Sign up Failed", Toast.LENGTH_SHORT).show()
                             }
                         }
-                        override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
+                        override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                             Toast.makeText(this@RegisterActivity, t.message, Toast.LENGTH_SHORT).show()
                         }
                     })

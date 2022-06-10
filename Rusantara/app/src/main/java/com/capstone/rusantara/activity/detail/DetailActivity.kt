@@ -1,8 +1,10 @@
 package com.capstone.rusantara.activity.detail
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.annotation.StringRes
@@ -15,7 +17,7 @@ import com.capstone.rusantara.models.ImageData
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class DetailActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityDetailBinding
 
@@ -27,6 +29,12 @@ class DetailActivity : AppCompatActivity() {
         setupView()
         setupViewPager()
         setupData()
+    }
+
+    override fun onClick(view: View) {
+        if (view.id == R.id.backIcon) {
+            finish()
+        }
     }
 
     private fun setupView() {
