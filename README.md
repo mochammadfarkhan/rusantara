@@ -144,7 +144,7 @@ Return json data about all foods.
   * `GET`
 
 * Headers
-  * `Authorization` : `Bearer \<token\>`
+  * `Authorization` : `Bearer <token>`
 
 * Response
 ```json
