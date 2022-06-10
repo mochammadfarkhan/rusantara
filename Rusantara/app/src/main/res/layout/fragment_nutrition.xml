@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.detail.fragment.NutritionFragment">
 
-    <TextView
-        android:id="@+id/nutrition"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="24dp"
-        android:textSize="14sp"
-        tools:text="food nutrients" />
+        android:layout_height="wrap_content"
+        android:paddingBottom="35dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/nutrition"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:textSize="14sp"
+            tools:text="food nutrients" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

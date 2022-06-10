@@ -31,6 +31,7 @@
         android:layout_width="244dp"
         android:layout_height="138dp"
         android:textSize="26sp"
+        android:text="@string/menu_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.287"

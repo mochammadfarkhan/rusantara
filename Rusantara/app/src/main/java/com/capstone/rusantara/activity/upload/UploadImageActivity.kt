@@ -9,6 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
@@ -125,6 +126,7 @@ class UploadImageActivity : AppCompatActivity() {
     }
 
     private fun uploadImage() {
+        binding.progressBar.visibility = View.VISIBLE
         if (getFile != null) {
             val file = reduceFileImage(getFile as File)
 
@@ -146,6 +148,7 @@ class UploadImageActivity : AppCompatActivity() {
                         response: Response<ImageData>
                     ) {
                         if (response.isSuccessful) {
+                            binding.progressBar.visibility = View.GONE
                             val responseBody = response.body()
                             if (responseBody != null) {
                                 val intent = Intent(applicationContext, DetailActivity::class.java)
@@ -166,7 +169,6 @@ class UploadImageActivity : AppCompatActivity() {
                 })
             }
         }
-
     }
 
     private fun setupView() {

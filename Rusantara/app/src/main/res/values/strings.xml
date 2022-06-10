@@ -35,4 +35,7 @@
     <string name="logout">Logout</string>
     <string name="rusantara">Rusantara</string>
     <string name="take_photo">Take Photo</string>
+    <string name="back_to_menu">back to menu</string>
+    <string name="food_image">food image</string>
+    <string name="menu_description">take a photo, upload, and the info will come out</string>
 </resources>

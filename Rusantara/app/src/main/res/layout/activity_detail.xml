@@ -15,7 +15,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/food_example" />
+        app:srcCompat="@drawable/food_example"
+        android:contentDescription="@string/food_image" />
 
     <ImageView
         android:id="@+id/backIcon"
@@ -23,15 +24,16 @@
         android:layout_height="54dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
-
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        android:contentDescription="@string/back_to_menu" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_food"
         app:tabTextColor="@android:color/white"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -51,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginBottom="12dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:shadowDx="4"
         android:shadowDy="4"
         android:shadowRadius="4"
