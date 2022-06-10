@@ -130,7 +130,7 @@ class UploadImageActivity : AppCompatActivity() {
 
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
             val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-                "photo",
+                "image",
                 file.name,
                 requestImageFile
             )
@@ -145,7 +145,7 @@ class UploadImageActivity : AppCompatActivity() {
                         call: Call<ImageData>,
                         response: Response<ImageData>
                     ) {
-                        if (!response.isSuccessful) {
+                        if (response.isSuccessful) {
                             val responseBody = response.body()
                             if (responseBody != null) {
                                 val intent = Intent(applicationContext, DetailActivity::class.java)
