@@ -102,7 +102,7 @@ Return json data about the food predicted.
 
 * Headers
   * `Content-Type` : `mulitpart/form-data`
-  * `Authorization` : `Bearer \<token\>`
+  * `Authorization` : `Bearer <token>`
 
   To get the token, you need to run `getIdToken` on the currrent logged in user in the client side. Example code on how to get the token:
   ```kotlin
