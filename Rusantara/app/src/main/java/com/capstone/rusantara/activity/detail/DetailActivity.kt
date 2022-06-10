@@ -1,14 +1,17 @@
 package com.capstone.rusantara.activity.detail
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
 import com.capstone.rusantara.R
+import com.capstone.rusantara.activity.login.LoginActivity
 import com.capstone.rusantara.adapter.SectionsPagerAdapter
 import com.capstone.rusantara.databinding.ActivityDetailBinding
 import com.capstone.rusantara.models.ImageData
@@ -40,6 +43,10 @@ class DetailActivity : AppCompatActivity() {
             )
         }
         supportActionBar?.hide()
+
+        binding.backIcon.setOnClickListener{
+            finish()
+        }
     }
 
     private fun setupViewPager() {

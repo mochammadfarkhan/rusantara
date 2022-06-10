@@ -5,46 +5,36 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.capstone.rusantara.activity.login.LoginActivity
-import com.capstone.rusantara.activity.upload.UploadImageActivity
 import com.capstone.rusantara.databinding.FragmentProfileBinding
+import com.capstone.rusantara.utils.Constant
+import com.capstone.rusantara.utils.PreferencesHelper
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
-    private lateinit var auth: FirebaseAuth
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
+    private lateinit var auth: FirebaseAuth
+    private lateinit var preferencesHelper: PreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(ProfileViewModel::class.java)
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.profUsernameValue
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
-        return root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
-
+        preferencesHelper = PreferencesHelper(requireContext())
+        binding.profEmailValue.text = preferencesHelper.getString(Constant.PREF_EMAIL)
+        
         binding.buttonLogout.setOnClickListener{
             logout()
             val intent = Intent(requireContext(), LoginActivity::class.java)
@@ -55,6 +45,7 @@ class ProfileFragment : Fragment() {
 
     private fun logout() {
         auth.signOut()
+        preferencesHelper.clear()
     }
 
     override fun onDestroyView() {
