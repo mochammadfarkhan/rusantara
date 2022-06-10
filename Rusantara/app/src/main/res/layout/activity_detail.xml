@@ -10,6 +10,7 @@
         android:id="@+id/img_food"
         android:layout_width="413dp"
         android:layout_height="396dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,7 +19,7 @@
 
     <ImageView
         android:id="@+id/backIcon"
-        android:layout_width="65dp"
+        android:layout_width="50dp"
         android:layout_height="54dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -51,6 +52,10 @@
         android:layout_marginStart="11dp"
         android:layout_marginBottom="12dp"
         android:textSize="30dp"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="4"
+        android:shadowColor="@color/black"
         android:textColor="@color/color_60"
         android:textStyle="bold"
         tools:text="Kue Putu"

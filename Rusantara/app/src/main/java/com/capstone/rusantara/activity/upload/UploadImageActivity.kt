@@ -151,15 +151,9 @@ class UploadImageActivity : AppCompatActivity() {
                                 val intent = Intent(applicationContext, DetailActivity::class.java)
                                 intent.putExtra(EXTRA_DATA, responseBody)
                                 startActivity(intent)
+                                finish()
                             }
                         }
-//                        else {
-//                            Toast.makeText(
-//                                this@UploadImageActivity,
-//                                response.message(),
-//                                Toast.LENGTH_SHORT
-//                            ).show()
-//                        }
                     }
 
                     override fun onFailure(call: Call<ImageData>, t: Throwable) {
@@ -171,27 +165,6 @@ class UploadImageActivity : AppCompatActivity() {
                     }
                 })
             }
-
-//            val service = ApiConfig.getApiService().predict(imageMultipart,"Bearer ${idToken}")
-//            service.enqueue(object : Callback<ImageData> {
-//                override fun onResponse(
-//                    call: Call<ImageData>,
-//                    response: Response<ImageData>
-//                ) {
-//                    if (response.isSuccessful) {
-//                        val responseBody = response.body()
-//                        if (responseBody != null) {
-//                            val intent = Intent(applicationContext, DetailActivity::class.java)
-//                            startActivity(intent)
-//                        }
-//                    } else {
-//                        Toast.makeText(this@UploadImageActivity, response.message(), Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//                override fun onFailure(call: Call<ImageData>, t: Throwable) {
-//                    Toast.makeText(this@UploadImageActivity, "Retrofit instance failed", Toast.LENGTH_SHORT).show()
-//                }
-//            })
         }
 
     }

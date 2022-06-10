@@ -33,4 +33,6 @@
     <string name="food_ingredients">Ingredients</string>
     <string name="food_nutrition">Nutrition</string>
     <string name="logout">Logout</string>
+    <string name="rusantara">Rusantara</string>
+    <string name="take_photo">Take Photo</string>
 </resources>

@@ -20,6 +20,7 @@
             android:id="@+id/img_item_photo"
             android:layout_width="360dp"
             android:layout_height="180dp"
+            android:scaleType="centerCrop"
             android:contentDescription="@+id/img_item_photo"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="1.0"

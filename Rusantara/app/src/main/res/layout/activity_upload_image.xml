@@ -6,28 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".activity.upload.UploadImageActivity">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
+    <ImageView
+        android:id="@+id/previewImageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/gray"
+        android:contentDescription="@string/preview_image"
         android:elevation="@dimen/cardview_default_radius"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/previewImageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/preview_image"
-            android:padding="60dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/upload_image_showcase" />
 
     <Button
         android:id="@+id/cameraButton"
@@ -62,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/previewImageView" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

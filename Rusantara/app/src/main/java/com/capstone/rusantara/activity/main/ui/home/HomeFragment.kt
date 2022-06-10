@@ -1,5 +1,7 @@
 package com.capstone.rusantara.activity.main.ui.home
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -40,10 +42,32 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener{
+        playAnimation()
+
+        binding.takePhotoButton.setOnClickListener{
             val intent = Intent(requireContext(), UploadImageActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    private fun playAnimation() {
+
+        ObjectAnimator.ofFloat(binding.tvRusantaraSupport, View.TRANSLATION_X, -30f, 30f).apply {
+            duration = 6000
+            repeatCount = ObjectAnimator.INFINITE
+            repeatMode = ObjectAnimator.REVERSE
+        }.start()
+
+//        val rusantaraTextView =
+//            ObjectAnimator.ofFloat(binding.tvRusantara, View.ALPHA, 1f).setDuration(500)
+//        val descriptionTextView =
+//            ObjectAnimator.ofFloat(binding.tvDescription, View.ALPHA, 1f).setDuration(500)
+//        val takePhotoButton = ObjectAnimator.ofFloat(binding.takePhotoButton, View.ALPHA, 1f).setDuration(500)
+//
+//        AnimatorSet().apply {
+//            playSequentially(rusantaraTextView, descriptionTextView, takePhotoButton)
+//            startDelay = 500
+//        }.start()
     }
 
     override fun onDestroyView() {

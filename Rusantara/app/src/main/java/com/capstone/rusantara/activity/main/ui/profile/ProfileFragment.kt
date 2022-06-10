@@ -17,7 +17,6 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
-    private lateinit var preferencesHelper: PreferencesHelper
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,8 +31,8 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
-        preferencesHelper = PreferencesHelper(requireContext())
-        binding.profEmailValue.text = preferencesHelper.getString(Constant.PREF_EMAIL)
+        binding.profUsernameValue.text = auth.currentUser?.displayName
+        binding.profEmailValue.text = auth.currentUser?.email
         
         binding.buttonLogout.setOnClickListener{
             logout()
@@ -45,7 +44,6 @@ class ProfileFragment : Fragment() {
 
     private fun logout() {
         auth.signOut()
-        preferencesHelper.clear()
     }
 
     override fun onDestroyView() {

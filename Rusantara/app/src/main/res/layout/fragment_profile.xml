@@ -7,17 +7,41 @@
     tools:context=".activity.main.ui.profile.ProfileFragment">
 
     <TextView
-        android:id="@+id/prof_email"
+        android:id="@+id/prof_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/username"
         android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="@string/email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/prof_username_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        tools:text="Thomas07"
+        app:layout_constraintStart_toStartOf="@+id/prof_username"
+        app:layout_constraintTop_toBottomOf="@+id/prof_username" />
+
+    <TextView
+        android:id="@+id/prof_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/email"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/prof_username_value"
+        app:layout_constraintTop_toBottomOf="@id/prof_username_value" />
 
     <TextView
         android:id="@+id/prof_email_value"
