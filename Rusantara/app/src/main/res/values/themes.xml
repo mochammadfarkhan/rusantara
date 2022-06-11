@@ -27,7 +27,7 @@
     </style>
 
     <style name="RegulerNormal" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">@font/latobold</item>
+        <item name="android:fontFamily">@font/latoreguler</item>
         <item name="android:textSize">16sp</item>
     </style>
 

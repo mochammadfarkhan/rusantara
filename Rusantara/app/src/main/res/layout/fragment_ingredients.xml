@@ -21,6 +21,7 @@
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:textSize="14sp"
+            style="@style/LatoReguler"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
