@@ -60,4 +60,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         tools:visibility="visible" />
 
+    <TextView
+        android:id="@+id/textNotFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/item_not_found"
+        android:textColor="@color/color_10"
+        android:textSize="24sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/img"
+        app:layout_constraintStart_toStartOf="@id/img"
+        app:layout_constraintTop_toBottomOf="@id/img" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

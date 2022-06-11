@@ -132,21 +132,24 @@ class SearchFragment : Fragment() {
             val idToken = result.token
 
             val service = ApiConfig.getApiService().searchFoods(query,"Bearer $idToken")
-            service.enqueue(object : Callback<List<ImageData>> {
+            service.enqueue(object : Callback<ArrayList<ImageData>> {
                 override fun onResponse(
-                    call: Call<List<ImageData>>,
-                    response: Response<List<ImageData>>
+                    call: Call<ArrayList<ImageData>>,
+                    response: Response<ArrayList<ImageData>>
                 ) {
+                    binding.textNotFound.visibility = View.VISIBLE
+                    binding.progressBar.visibility = View.GONE
                     if (response.isSuccessful) {
-                        binding.progressBar.visibility = View.GONE
+                        binding.textNotFound.visibility = View.GONE
                         val responseBody = response.body()
                         if (responseBody != null) {
-                            showRecyclerList(responseBody)
+                            listFoods = responseBody
                         }
                     }
+                    showRecyclerList(listFoods)
                 }
 
-                override fun onFailure(call: Call<List<ImageData>>, t: Throwable) {
+                override fun onFailure(call: Call<ArrayList<ImageData>>, t: Throwable) {
                     Toast.makeText(
                         requireContext(),
                         t.message,
