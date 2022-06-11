@@ -62,6 +62,7 @@ class RegisterActivity : AppCompatActivity() {
                     binding.idPassword.error = R.string.error_password.toString()
                 }
                 else -> {
+                    binding.progressBar.visibility = View.VISIBLE
                     val service = ApiConfig.getApiService().signupUser(username, email, password)
                     service.enqueue(object : Callback<RegisterResponse> {
                         override fun onResponse(
@@ -69,6 +70,7 @@ class RegisterActivity : AppCompatActivity() {
                             response: Response<RegisterResponse>
                         ) {
                             if (response.isSuccessful) {
+                                binding.progressBar.visibility = View.GONE
                                 val responseBody = response.body()
                                 if (responseBody != null) {
                                     AlertDialog.Builder(this@RegisterActivity).apply {
@@ -118,21 +120,14 @@ class RegisterActivity : AppCompatActivity() {
 //    }
 
     private fun playAnimation() {
-        ObjectAnimator.ofFloat(binding.logo, View.TRANSLATION_X, -30f, 30f).apply {
-            duration = 6000
-            repeatCount = ObjectAnimator.INFINITE
-            repeatMode = ObjectAnimator.REVERSE
-        }.start()
-
-        val title = ObjectAnimator.ofFloat(binding.register, View.ALPHA, 1f).setDuration(500)
-        val usernameTextView = ObjectAnimator.ofFloat(binding.usernameTextView, View.ALPHA, 1f).setDuration(500)
-        val usernameEditTextLayout = ObjectAnimator.ofFloat(binding.tvUsername, View.ALPHA, 1f).setDuration(500)
-        val emailTextView = ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(500)
-        val emailEditTextLayout = ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(500)
-        val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(500)
-        val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(500)
-        val signup = ObjectAnimator.ofFloat(binding.signupButton, View.ALPHA, 1f).setDuration(500)
-
+        val title = ObjectAnimator.ofFloat(binding.register, View.ALPHA, 1f).setDuration(300)
+        val usernameTextView = ObjectAnimator.ofFloat(binding.usernameTextView, View.ALPHA, 1f).setDuration(300)
+        val usernameEditTextLayout = ObjectAnimator.ofFloat(binding.tvUsername, View.ALPHA, 1f).setDuration(300)
+        val emailTextView = ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(300)
+        val emailEditTextLayout = ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(300)
+        val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(300)
+        val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(300)
+        val signup = ObjectAnimator.ofFloat(binding.signupButton, View.ALPHA, 1f).setDuration(300)
 
         AnimatorSet().apply {
             playSequentially(
@@ -145,7 +140,7 @@ class RegisterActivity : AppCompatActivity() {
                 passwordEditTextLayout,
                 signup
             )
-            startDelay = 500
+            startDelay = 400
         }.start()
     }
 }

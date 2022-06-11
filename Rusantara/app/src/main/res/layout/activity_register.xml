@@ -4,37 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_60"
     tools:context=".activity.register.RegisterActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/color_60">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="300dp"
-            android:layout_height="290dp"
+            android:layout_width="200dp"
+            android:layout_height="185dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo"
+            app:srcCompat="@drawable/logo_rusantara"
             tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/color_10"
             android:text="@string/register"
             android:textSize="26sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo" />
-
         <TextView
             android:id="@+id/usernameTextView"
             android:layout_width="wrap_content"
@@ -54,6 +55,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
             android:alpha="0"
+            android:colorPrimary="@color/color_10"
+            android:backgroundTint="@color/color_10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/usernameTextView"
@@ -136,19 +139,6 @@
                 android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-        <!--    <Button-->
-        <!--        android:id="@+id/buttonRegister"-->
-        <!--        android:layout_width="match_parent"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_margin="10dp"-->
-        <!--        android:layout_marginTop="8dp"-->
-        <!--        android:alpha="0"-->
-        <!--        android:background="@color/teal_200"-->
-        <!--        android:text="@string/ButtonRegister"-->
-        <!--        android:textColor="@color/white"-->
-        <!--        app:layout_constraintTop_toBottomOf="@id/tvPassword"-->
-        <!--        tools:layout_editor_absoluteX="9dp" />-->
 
         <Button
             android:id="@+id/signupButton"
