@@ -20,6 +20,7 @@
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
             android:textSize="14sp"
+            style="@style/LatoReguler"
             tools:text="food nutrients" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

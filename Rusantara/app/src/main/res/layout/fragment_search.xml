@@ -69,6 +69,7 @@
         android:textColor="@color/color_10"
         android:textSize="24sp"
         android:visibility="gone"
+        style="@style/LatoReguler"
         app:layout_constraintEnd_toEndOf="@id/img"
         app:layout_constraintStart_toStartOf="@id/img"
         app:layout_constraintTop_toBottomOf="@id/img" />
