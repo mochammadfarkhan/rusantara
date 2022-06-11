@@ -53,13 +53,13 @@ class RegisterActivity : AppCompatActivity() {
 
             when {
                 username.isEmpty() -> {
-                    binding.idUsername.error = R.string.error_username.toString()
+                    binding.idUsername.error = getString(R.string.error_username)
                 }
                 email.isEmpty() -> {
-                    binding.idEmail.error = R.string.error_email.toString()
+                    binding.idEmail.error = getString(R.string.error_email)
                 }
                 password.isEmpty() -> {
-                    binding.idPassword.error = R.string.error_password.toString()
+                    binding.idPassword.error = getString(R.string.error_password)
                 }
                 else -> {
                     binding.progressBar.visibility = View.VISIBLE
@@ -73,22 +73,25 @@ class RegisterActivity : AppCompatActivity() {
                                 binding.progressBar.visibility = View.GONE
                                 val responseBody = response.body()
                                 if (responseBody != null) {
-                                    AlertDialog.Builder(this@RegisterActivity).apply {
-                                        setTitle("Sign Up")
-                                        setMessage("Account succesfully created")
-                                        setPositiveButton("OK") { _, _ ->
-                                            finish()
-                                        }
-                                        create()
-                                        show()
-                                    }
+                                    Toast.makeText(
+                                        this@RegisterActivity,
+                                        "Account succesfully created",
+                                        Toast.LENGTH_LONG
+                                    ).show()
+                                    finish()
                                 }
                             } else {
-                                Toast.makeText(this@RegisterActivity, "Sign up Failed", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this@RegisterActivity,
+                                    "Sign up Failed",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
                         }
+
                         override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
-                            Toast.makeText(this@RegisterActivity, t.message, Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@RegisterActivity, t.message, Toast.LENGTH_SHORT)
+                                .show()
                         }
                     })
                 }
@@ -96,41 +99,26 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-//    private fun showLoading(isLoading: Boolean) {
-//        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-//    }
-
-//    private fun registerValidation() {
-//        registerViewModel.message.observe(this) {
-//            if (it.error) {
-//                Toast.makeText(
-//                    this@RegisterActivity,
-//                    registerViewModel.message.value?.message.toString(),
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//            } else {
-//                Toast.makeText(
-//                    this@RegisterActivity,
-//                    registerViewModel.message.value?.message.toString(),
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//                finish()
-//            }
-//        }
-//    }
-
     private fun playAnimation() {
+        val logoImage = ObjectAnimator.ofFloat(binding.logo, View.ALPHA, 1f).setDuration(300)
         val title = ObjectAnimator.ofFloat(binding.register, View.ALPHA, 1f).setDuration(300)
-        val usernameTextView = ObjectAnimator.ofFloat(binding.usernameTextView, View.ALPHA, 1f).setDuration(300)
-        val usernameEditTextLayout = ObjectAnimator.ofFloat(binding.tvUsername, View.ALPHA, 1f).setDuration(300)
-        val emailTextView = ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(300)
-        val emailEditTextLayout = ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(300)
-        val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(300)
-        val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(300)
+        val usernameTextView =
+            ObjectAnimator.ofFloat(binding.usernameTextView, View.ALPHA, 1f).setDuration(300)
+        val usernameEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tvUsername, View.ALPHA, 1f).setDuration(300)
+        val emailTextView =
+            ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(300)
+        val emailEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(300)
+        val passwordTextView =
+            ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(300)
+        val passwordEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(300)
         val signup = ObjectAnimator.ofFloat(binding.signupButton, View.ALPHA, 1f).setDuration(300)
 
         AnimatorSet().apply {
             playSequentially(
+                logoImage,
                 title,
                 usernameTextView,
                 usernameEditTextLayout,

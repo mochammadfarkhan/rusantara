@@ -18,6 +18,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="100dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,12 +27,13 @@
 
         <TextView
             android:id="@+id/login"
+            style="@style/TitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="30dp"
+            android:alpha="0"
             android:text="@string/login"
-            style="@style/TitleText"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo" />
 
@@ -44,6 +46,7 @@
             android:alpha="0"
             android:text="@string/email"
             style="@style/BoldNormal"
+            android:textColor="@color/color_10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/login" />
 
@@ -78,6 +81,7 @@
             android:alpha="0"
             android:text="@string/password"
             style="@style/BoldNormal"
+            android:textColor="@color/color_10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
@@ -111,7 +115,8 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="32dp"
             android:alpha="0"
-            android:backgroundTint="@color/black"
+            android:fontFamily="@font/latobold"
+            android:backgroundTint="@color/color_30"
             android:text="@string/ButtonLogin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

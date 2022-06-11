@@ -61,32 +61,41 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
-
         binding.toRegister.setOnClickListener {
             val intent = Intent(applicationContext, RegisterActivity::class.java)
             startActivity(intent)
         }
 
         binding.loginButton.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
             val email = binding.idEmail.text.toString().trim()
             val password = binding.idPassword.text.toString().trim()
             when {
                 email.isEmpty() -> {
-                    binding.tvEmail.error = R.string.error_email.toString()
+                    binding.tvEmail.error = getString(R.string.error_email)
                 }
                 password.isEmpty() -> {
-                    binding.tvPassword.error = R.string.error_password.toString()
+                    binding.tvPassword.error = getString(R.string.error_password)
                 }
                 else -> {
+                    binding.progressBar.visibility = View.VISIBLE
                     auth.signInWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(this){
-                            if (it.isSuccessful){
-                                Intent(this@LoginActivity, MenuActivity::class.java).also { intent ->
-                                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        .addOnCompleteListener(this) {
+                            if (it.isSuccessful) {
+                                binding.progressBar.visibility = View.GONE
+                                Intent(
+                                    this@LoginActivity,
+                                    MenuActivity::class.java
+                                ).also { intent ->
+                                    intent.flags =
+                                        Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     startActivity(intent)
+                                    Toast.makeText(this@LoginActivity, "Welcome ${auth.currentUser?.displayName}", Toast.LENGTH_SHORT).show()
                                 }
                             } else {
-                                Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
+                                binding.progressBar.visibility = View.GONE
+                                Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT)
+                                    .show()
                             }
                         }
                 }
@@ -95,15 +104,30 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun playAnimation() {
-        val emailTextView = ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(300)
-        val emailEditTextLayout = ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(300)
-        val passwordTextView = ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(300)
-        val passwordEditTextLayout = ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(300)
+        val logoImage = ObjectAnimator.ofFloat(binding.logo, View.ALPHA, 1f).setDuration(300)
+        val loginTextView = ObjectAnimator.ofFloat(binding.login, View.ALPHA, 1f).setDuration(300)
+        val emailTextView =
+            ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(300)
+        val emailEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tvEmail, View.ALPHA, 1f).setDuration(300)
+        val passwordTextView =
+            ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(300)
+        val passwordEditTextLayout =
+            ObjectAnimator.ofFloat(binding.tvPassword, View.ALPHA, 1f).setDuration(300)
         val login = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(300)
         val register = ObjectAnimator.ofFloat(binding.toRegister, View.ALPHA, 1f).setDuration(300)
 
         AnimatorSet().apply {
-            playSequentially(emailTextView, emailEditTextLayout, passwordTextView, passwordEditTextLayout, login, register)
+            playSequentially(
+                logoImage,
+                loginTextView,
+                emailTextView,
+                emailEditTextLayout,
+                passwordTextView,
+                passwordEditTextLayout,
+                login,
+                register
+            )
             startDelay = 400
         }.start()
     }

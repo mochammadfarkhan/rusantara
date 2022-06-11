@@ -31,5 +31,5 @@ interface ApiService {
 //    @GET("/foods")
 //    fun getAllFoods(
 //        @Header("Authorization") authHeader: String
-//    ): Call<List<ImageData>>
+//    ): Call<ArrayList<ImageData>>
 }

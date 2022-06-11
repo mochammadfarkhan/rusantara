@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -15,20 +14,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.rusantara.activity.detail.DetailActivity
 import com.capstone.rusantara.activity.detail.DetailActivity.Companion.EXTRA_DATA
 import com.capstone.rusantara.adapter.ListFoodsAdapter
-import com.capstone.rusantara.api.ApiConfig
 import com.capstone.rusantara.databinding.FragmentSearchBinding
 import com.capstone.rusantara.models.ImageData
 import com.google.firebase.auth.FirebaseAuth
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private var listFoods: ArrayList<ImageData> = ArrayList()
     private lateinit var auth: FirebaseAuth
-
+    private lateinit var searchViewModel: SearchViewModel
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -36,15 +31,10 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val SearchViewModel =
-//            ViewModelProvider(this)[SearchViewModel::class.java]
+        searchViewModel =
+            ViewModelProvider(this)[SearchViewModel::class.java]
 
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
-
-//        val textView: TextView = binding.
-//        dashboardViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
         return binding.root
     }
 
@@ -52,8 +42,23 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         auth = FirebaseAuth.getInstance()
+        setupViewModel()
         searchFoods()
 //        getAllFoods()
+    }
+
+    private fun setupViewModel() {
+        searchViewModel.isLoading.observe(viewLifecycleOwner) {
+            if (it) binding.progressBar.visibility = View.VISIBLE
+            else binding.progressBar.visibility = View.GONE
+        }
+        searchViewModel.isNotFound.observe(viewLifecycleOwner) {
+            if (it) binding.textNotFound.visibility = View.VISIBLE
+            else binding.textNotFound.visibility = View.GONE
+        }
+        searchViewModel.listFoods.observe(viewLifecycleOwner) {
+            showRecyclerList(it)
+        }
     }
 
     private fun showRecyclerList(listFoods: List<ImageData>) {
@@ -79,30 +84,7 @@ class SearchFragment : Fragment() {
 //        val firebaseUser = auth.currentUser
 //        firebaseUser?.getIdToken(false)?.addOnSuccessListener { result ->
 //            val idToken = result.token
-//
-//            val service = ApiConfig.getApiService().getAllFoods("Bearer $idToken")
-//            service.enqueue(object : Callback<List<ImageData>> {
-//                override fun onResponse(
-//                    call: Call<List<ImageData>>,
-//                    response: Response<List<ImageData>>
-//                ) {
-//                    if (response.isSuccessful) {
-//                        binding.progressBar.visibility = View.GONE
-//                        val responseBody = response.body()
-//                        if (responseBody != null) {
-//                            showRecyclerList(responseBody)
-//                        }
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<List<ImageData>>, t: Throwable) {
-//                    Toast.makeText(
-//                        requireContext(),
-//                        t.message,
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                }
-//            })
+//            searchViewModel.getAllFoods(idToken)
 //        }
 //    }
 
@@ -113,6 +95,7 @@ class SearchFragment : Fragment() {
                     return true
                 } else {
                     listFoods.clear()
+                    showRecyclerList(listFoods)
                     getFoodsSearch(query)
                 }
                 return true
@@ -125,38 +108,10 @@ class SearchFragment : Fragment() {
     }
 
     private fun getFoodsSearch(query: String) {
-        binding.progressBar.visibility = View.VISIBLE
-
         val firebaseUser = auth.currentUser
         firebaseUser?.getIdToken(false)?.addOnSuccessListener { result ->
             val idToken = result.token
-
-            val service = ApiConfig.getApiService().searchFoods(query,"Bearer $idToken")
-            service.enqueue(object : Callback<ArrayList<ImageData>> {
-                override fun onResponse(
-                    call: Call<ArrayList<ImageData>>,
-                    response: Response<ArrayList<ImageData>>
-                ) {
-                    binding.textNotFound.visibility = View.VISIBLE
-                    binding.progressBar.visibility = View.GONE
-                    if (response.isSuccessful) {
-                        binding.textNotFound.visibility = View.GONE
-                        val responseBody = response.body()
-                        if (responseBody != null) {
-                            listFoods = responseBody
-                        }
-                    }
-                    showRecyclerList(listFoods)
-                }
-
-                override fun onFailure(call: Call<ArrayList<ImageData>>, t: Throwable) {
-                    Toast.makeText(
-                        requireContext(),
-                        t.message,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-            })
+            searchViewModel.searchFoods(query, idToken)
         }
     }
 
