@@ -20,8 +20,6 @@ class ListFoodsAdapter(private val listFoods: List<ImageData>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val (img, name, info) = listFoods[position]
-
         Glide.with(holder.itemView.context)
             .load(listFoods[position].img)
             .into(holder.binding.imgItemPhoto)

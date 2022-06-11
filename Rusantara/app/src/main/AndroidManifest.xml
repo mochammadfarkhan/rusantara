@@ -29,6 +29,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rusantara">
         <activity
+            android:name=".activity.camera.CameraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.main.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activity.main.MenuActivity"
             android:exported="false"
             android:label="@string/title_activity_menu" />
@@ -43,17 +56,7 @@
             android:exported="false" />
         <activity
             android:name=".activity.login.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".activity.main.MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

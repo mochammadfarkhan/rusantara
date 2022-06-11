@@ -26,7 +26,7 @@ interface ApiService {
     fun searchFoods(
         @Path("search") search: String,
         @Header("Authorization") authHeader: String
-    ): Call<List<ImageData>>
+    ): Call<ArrayList<ImageData>>
 
 //    @GET("/foods")
 //    fun getAllFoods(
