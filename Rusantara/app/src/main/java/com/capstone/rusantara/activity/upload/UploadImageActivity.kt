@@ -151,9 +151,10 @@ class UploadImageActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<ImageData>, t: Throwable) {
+                        binding.progressBar.visibility = View.GONE
                         Toast.makeText(
                             this@UploadImageActivity,
-                            t.message,
+                            "Time out\nPlease check your internet connection and try again",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
