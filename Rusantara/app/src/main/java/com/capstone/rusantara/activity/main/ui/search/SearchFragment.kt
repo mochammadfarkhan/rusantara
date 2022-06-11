@@ -36,8 +36,8 @@ class SearchFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val SearchViewModel =
-            ViewModelProvider(this)[SearchViewModel::class.java]
+//        val SearchViewModel =
+//            ViewModelProvider(this)[SearchViewModel::class.java]
 
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
 
@@ -53,6 +53,7 @@ class SearchFragment : Fragment() {
 
         auth = FirebaseAuth.getInstance()
         searchFoods()
+//        getAllFoods()
     }
 
     private fun showRecyclerList(listFoods: List<ImageData>) {
@@ -73,6 +74,37 @@ class SearchFragment : Fragment() {
             }
         })
     }
+
+//    private fun getAllFoods() {
+//        val firebaseUser = auth.currentUser
+//        firebaseUser?.getIdToken(false)?.addOnSuccessListener { result ->
+//            val idToken = result.token
+//
+//            val service = ApiConfig.getApiService().getAllFoods("Bearer $idToken")
+//            service.enqueue(object : Callback<List<ImageData>> {
+//                override fun onResponse(
+//                    call: Call<List<ImageData>>,
+//                    response: Response<List<ImageData>>
+//                ) {
+//                    if (response.isSuccessful) {
+//                        binding.progressBar.visibility = View.GONE
+//                        val responseBody = response.body()
+//                        if (responseBody != null) {
+//                            showRecyclerList(responseBody)
+//                        }
+//                    }
+//                }
+//
+//                override fun onFailure(call: Call<List<ImageData>>, t: Throwable) {
+//                    Toast.makeText(
+//                        requireContext(),
+//                        t.message,
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+//            })
+//        }
+//    }
 
     private fun searchFoods() {
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
@@ -99,14 +131,14 @@ class SearchFragment : Fragment() {
         firebaseUser?.getIdToken(false)?.addOnSuccessListener { result ->
             val idToken = result.token
 
-            val service = ApiConfig.getApiService().getAllFoods(query, "Bearer $idToken")
+            val service = ApiConfig.getApiService().searchFoods(query,"Bearer $idToken")
             service.enqueue(object : Callback<List<ImageData>> {
                 override fun onResponse(
                     call: Call<List<ImageData>>,
                     response: Response<List<ImageData>>
                 ) {
                     if (response.isSuccessful) {
-                        binding.progressBar.visibility = View.INVISIBLE
+                        binding.progressBar.visibility = View.GONE
                         val responseBody = response.body()
                         if (responseBody != null) {
                             showRecyclerList(responseBody)

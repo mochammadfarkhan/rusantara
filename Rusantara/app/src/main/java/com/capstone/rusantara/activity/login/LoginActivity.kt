@@ -25,14 +25,11 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
-    private lateinit var preferencesHelper: PreferencesHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        preferencesHelper = PreferencesHelper(this)
 
         setupView()
         setupAction()
@@ -84,11 +81,9 @@ class LoginActivity : AppCompatActivity() {
                     auth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this){
                             if (it.isSuccessful){
-                                preferencesHelper.put(PREF_EMAIL, email)
                                 Intent(this@LoginActivity, MenuActivity::class.java).also { intent ->
                                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                     startActivity(intent)
-                                    //val firebaseUser = auth.currentUser
                                 }
                             } else {
                                 Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()

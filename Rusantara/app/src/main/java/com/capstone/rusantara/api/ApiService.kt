@@ -23,8 +23,13 @@ interface ApiService {
     ): Call<ImageData>
 
     @GET("/foods/{search}")
-    fun getAllFoods(
+    fun searchFoods(
         @Path("search") search: String,
         @Header("Authorization") authHeader: String
     ): Call<List<ImageData>>
+
+//    @GET("/foods")
+//    fun getAllFoods(
+//        @Header("Authorization") authHeader: String
+//    ): Call<List<ImageData>>
 }

@@ -9,6 +9,7 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
@@ -125,6 +126,7 @@ class UploadImageActivity : AppCompatActivity() {
     }
 
     private fun uploadImage() {
+        binding.progressBar.visibility = View.VISIBLE
         if (getFile != null) {
             val file = reduceFileImage(getFile as File)
 
@@ -146,20 +148,15 @@ class UploadImageActivity : AppCompatActivity() {
                         response: Response<ImageData>
                     ) {
                         if (response.isSuccessful) {
+                            binding.progressBar.visibility = View.GONE
                             val responseBody = response.body()
                             if (responseBody != null) {
                                 val intent = Intent(applicationContext, DetailActivity::class.java)
                                 intent.putExtra(EXTRA_DATA, responseBody)
                                 startActivity(intent)
+                                finish()
                             }
                         }
-//                        else {
-//                            Toast.makeText(
-//                                this@UploadImageActivity,
-//                                response.message(),
-//                                Toast.LENGTH_SHORT
-//                            ).show()
-//                        }
                     }
 
                     override fun onFailure(call: Call<ImageData>, t: Throwable) {
@@ -171,29 +168,7 @@ class UploadImageActivity : AppCompatActivity() {
                     }
                 })
             }
-
-//            val service = ApiConfig.getApiService().predict(imageMultipart,"Bearer ${idToken}")
-//            service.enqueue(object : Callback<ImageData> {
-//                override fun onResponse(
-//                    call: Call<ImageData>,
-//                    response: Response<ImageData>
-//                ) {
-//                    if (response.isSuccessful) {
-//                        val responseBody = response.body()
-//                        if (responseBody != null) {
-//                            val intent = Intent(applicationContext, DetailActivity::class.java)
-//                            startActivity(intent)
-//                        }
-//                    } else {
-//                        Toast.makeText(this@UploadImageActivity, response.message(), Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//                override fun onFailure(call: Call<ImageData>, t: Throwable) {
-//                    Toast.makeText(this@UploadImageActivity, "Retrofit instance failed", Toast.LENGTH_SHORT).show()
-//                }
-//            })
         }
-
     }
 
     private fun setupView() {

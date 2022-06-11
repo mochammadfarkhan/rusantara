@@ -35,6 +35,7 @@ class InfoFragment : Fragment() {
         val imageData = getImageData()
 
         binding.description.text = imageData.info
+        binding.specificLocation.text = imageData.location
     }
 
     private fun getImageData(): ImageData {
