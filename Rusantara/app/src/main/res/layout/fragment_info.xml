@@ -55,7 +55,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="@string/specific_location"
-                android:textSize="18sp"
                 style="@style/RegulerNormal"
                 app:layout_constraintStart_toStartOf="@+id/img_location"
                 app:layout_constraintTop_toBottomOf="@+id/location" />
