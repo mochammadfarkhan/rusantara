@@ -29,13 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:textColor="@color/color_10"
             android:text="@string/register"
-            android:textSize="26sp"
-            android:textStyle="bold"
+            style="@style/TitleText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/logo" />
+
         <TextView
             android:id="@+id/usernameTextView"
             android:layout_width="wrap_content"
@@ -44,7 +43,7 @@
             android:layout_marginTop="8dp"
             android:alpha="0"
             android:text="@string/username"
-            android:textColor="@color/black"
+            style="@style/BoldNormal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/register" />
 
@@ -80,7 +79,7 @@
             android:layout_marginTop="8dp"
             android:alpha="0"
             android:text="@string/email"
-            android:textColor="@color/black"
+            style="@style/BoldNormal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
@@ -114,7 +113,7 @@
             android:layout_marginTop="8dp"
             android:alpha="0"
             android:text="@string/password"
-            android:textColor="@color/black"
+            style="@style/BoldNormal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 

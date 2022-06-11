@@ -20,33 +20,36 @@
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1495" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1495" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/drawable/ic_place_holder.xml" value="0.1495" />
-        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_detail.xml" value="0.26256983240223464" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_menu.xml" value="0.22" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_register.xml" value="0.1762917933130699" />
-        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_upload_image.xml" value="0.25" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/activity_upload_image.xml" value="0.18" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/food_row.xml" value="0.1762917933130699" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
-        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_info.xml" value="0.25" />
-        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_ingredients.xml" value="0.25" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_ingredients.xml" value="0.14" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_nutrient.xml" value="0.1" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_nutrition.xml" value="0.1671195652173913" />
-        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_search.xml" value="0.2640449438202247" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Capstone/Rusantara/app/src/main/res/layout/fragment_search.xml" value="0.16018518518518518" />
         <entry key="..\:/Capstone/Rusantara/app/src/main/res/menu/bottom_nav_menu.xml" value="0.22" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.113" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/drawable/cumtom.xml" value="0.338" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/drawable/custom1.xml" value="0.1105" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/drawable/ic_launcher_background.xml" value="0.148" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/drawable/ic_place_holder.xml" value="0.148" />
+        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/font/font.xml" value="0.17314814814814813" />
+        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/font/lato.xml" value="0.17314814814814813" />
+        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/font/latobold.xml" value="0.17314814814814813" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_detail.xml" value="0.1" />
-        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_login.xml" value="0.42452830188679247" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_menu.xml" value="0.21875" />
-        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_register.xml" value="0.19230769230769232" />
+        <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/activity_upload_image.xml" value="0.25" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/food_row.xml" value="0.25" />
         <entry key="..\:/Capstone/rusantara/Rusantara/app/src/main/res/layout/fragment_home.xml" value="0.21875" />
