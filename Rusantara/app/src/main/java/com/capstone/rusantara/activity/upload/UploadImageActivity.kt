@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.capstone.rusantara.activity.camera.CameraActivity
 import com.capstone.rusantara.activity.detail.DetailActivity
 import com.capstone.rusantara.activity.detail.DetailActivity.Companion.EXTRA_DATA
 import com.capstone.rusantara.api.ApiConfig
@@ -40,7 +41,6 @@ import java.io.File
 class UploadImageActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUploadImageBinding
-    private lateinit var currentPhotoPath: String
     private var getFile: File? = null
     private lateinit var auth: FirebaseAuth
 
@@ -62,7 +62,7 @@ class UploadImageActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
 
         binding.cameraButton.setOnClickListener {
-            startTakePhoto()
+            startCameraX()
         }
         binding.galleryButton.setOnClickListener {
             startGallery()
@@ -72,19 +72,25 @@ class UploadImageActivity : AppCompatActivity() {
         }
     }
 
-    private fun startTakePhoto() {
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        intent.resolveActivity(packageManager)
+    private fun startCameraX() {
+        val intent = Intent(this, CameraActivity::class.java)
+        launcherIntentCameraX.launch(intent)
+    }
 
-        createCustomTempFile(application).also {
-            val photoURI: Uri = FileProvider.getUriForFile(
-                this@UploadImageActivity,
-                "com.capstone.rusantara",
-                it
+    private val launcherIntentCameraX = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+        if (it.resultCode == CAMERA_X_RESULT) {
+            val myFile = it.data?.getSerializableExtra("picture") as File
+            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
+
+            getFile = myFile
+            val result = rotateBitmap(
+                BitmapFactory.decodeFile(getFile?.path),
+                isBackCamera
             )
-            currentPhotoPath = it.absolutePath
-            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-            launcherIntentCamera.launch(intent)
+
+            binding.previewImageView.setImageBitmap(result)
         }
     }
 
@@ -94,21 +100,6 @@ class UploadImageActivity : AppCompatActivity() {
         intent.type = "image/*"
         val chooser = Intent.createChooser(intent, "Choose a Picture")
         launcherIntentGallery.launch(chooser)
-    }
-
-    private val launcherIntentCamera = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if (it.resultCode == RESULT_OK) {
-            val myFile = File(currentPhotoPath)
-            getFile = myFile
-
-            val result = rotateBitmap(
-                BitmapFactory.decodeFile(myFile.path),
-                true
-            )
-            binding.previewImageView.setImageBitmap(result)
-        }
     }
 
     private val launcherIntentGallery = registerForActivityResult(
@@ -207,6 +198,8 @@ class UploadImageActivity : AppCompatActivity() {
     }
 
     companion object {
+        const val CAMERA_X_RESULT = 200
+
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
         private const val REQUEST_CODE_PERMISSIONS = 10
     }
