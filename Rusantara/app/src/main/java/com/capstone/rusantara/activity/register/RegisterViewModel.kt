@@ -8,7 +8,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.capstone.rusantara.api.ApiConfig
-import com.capstone.rusantara.models.SignupResponse
 import com.google.gson.Gson
 import org.json.JSONObject
 import retrofit2.Call
