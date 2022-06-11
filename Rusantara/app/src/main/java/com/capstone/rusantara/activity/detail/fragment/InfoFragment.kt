@@ -1,14 +1,10 @@
 package com.capstone.rusantara.activity.detail.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
-import com.capstone.rusantara.R
-import com.capstone.rusantara.activity.detail.DetailActivity
-import com.capstone.rusantara.activity.detail.DetailActivity.Companion.EXTRA_DATA
+import androidx.fragment.app.Fragment
 import com.capstone.rusantara.databinding.FragmentInfoBinding
 import com.capstone.rusantara.models.ImageData
 

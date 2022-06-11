@@ -8,8 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.capstone.rusantara.activity.login.LoginActivity
 import com.capstone.rusantara.databinding.FragmentProfileBinding
-import com.capstone.rusantara.utils.Constant
-import com.capstone.rusantara.utils.PreferencesHelper
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment() {

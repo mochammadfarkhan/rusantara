@@ -1,14 +1,9 @@
 package com.capstone.rusantara.activity.main.ui.search
 
-import android.app.Application
-import android.view.View
-import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.capstone.rusantara.api.ApiConfig
-import com.capstone.rusantara.api.ApiService
 import com.capstone.rusantara.models.ImageData
 import retrofit2.Call
 import retrofit2.Callback

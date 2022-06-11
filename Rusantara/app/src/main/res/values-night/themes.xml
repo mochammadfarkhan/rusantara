@@ -13,4 +13,28 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TitleText" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/color_10</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:fontFamily">@font/latobold</item>
+    </style>
+
+    <style name="BoldNormal" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/latobold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="RegulerNormal" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/latoreguler</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="LatoBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/latobold</item>
+    </style>
+
+    <style name="LatoReguler" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/latoreguler</item>
+    </style>
 </resources>

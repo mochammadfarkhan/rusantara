@@ -2,10 +2,10 @@ package com.capstone.rusantara.activity.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.rusantara.R
 import com.capstone.rusantara.activity.login.LoginActivity
 

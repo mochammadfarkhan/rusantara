@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.capstone.rusantara.activity.upload.UploadImageActivity
 import com.capstone.rusantara.databinding.FragmentHomeBinding
 

@@ -3,13 +3,12 @@ package com.capstone.rusantara.activity.register
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.rusantara.R
 import com.capstone.rusantara.api.ApiConfig
 import com.capstone.rusantara.databinding.ActivityRegisterBinding
