@@ -38,4 +38,5 @@
     <string name="back_to_menu">back to menu</string>
     <string name="food_image">food image</string>
     <string name="menu_description">take a photo, upload, and the info will come out</string>
+    <string name="splash_screen">splash screen</string>
 </resources>
